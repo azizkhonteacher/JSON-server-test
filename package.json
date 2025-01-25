@@ -1,0 +1,30 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "concurrently \"npm run json-server\" \"nuxt dev\"",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "json-server": "json-server --watch db.json --port 3001"
+  },
+  "dependencies": {
+    "nuxt": "^3.15.2",
+    "ofetch": "^1.4.1",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "json-server": "^1.0.0-beta.3",
+    "netlify-lambda": "^2.0.16"
+  },
+  "version": "1.0.0",
+  "description": "Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
