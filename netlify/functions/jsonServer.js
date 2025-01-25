@@ -19,3 +19,18 @@ exports.handler = async (event, context) => {
     });
   });
 };
+
+
+
+
+
+// const { createServer } = require("json-server");
+// const server = createServer();
+// const router = createServer();
+// const middlewares = jsonServer.defaults();
+
+// server.use(middlewares);
+// server.use(router);
+// server.listen(5000, () => {
+//   console.log("JSON Server is running");
+// });
