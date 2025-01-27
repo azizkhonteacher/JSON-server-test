@@ -1,5 +1,5 @@
 const baseURL = process.env.NODE_ENV === "production" 
-  ? "https://your-netlify-site.netlify.app" // Netlify domeni
+  ? "https://jsonservertest-1.netlify.app" // Netlify domeni
   : "http://localhost:8888"; // Lokal server uchun
 
 export default {

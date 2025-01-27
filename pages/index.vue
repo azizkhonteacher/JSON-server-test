@@ -39,9 +39,12 @@ import viewPhotos from './viewPhotos.vue';
   
         reader.onload = () => {
           const base64Image = reader.result;
-  
+          const baseURL = process.env.NODE_ENV === "production" 
+  ? "https://jsonservertest-1.netlify.app" // Netlify domeni
+  : "http://localhost:8888"; // Lokal server uchun
+
           // Base64 ni JSON serverga yuborish
-          fetch("http://localhost:8888/upload", {
+          fetch("baseURL/upload", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ image: base64Image }),
