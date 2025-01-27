@@ -1,4 +1,7 @@
 [build]
-  publish = "dist"
   command = "npm run build"
-  functions = "netlify/functions"
+  publish = ".output/public"
+
+[functions]
+  directory = "netlify/functions"
+  external_node_modules = ["json-server"]

@@ -1,36 +1,11 @@
-const jsonServer = require("json-server");
-const path = require("path");
+import jsonServer from "json-server";
+import serverless from "serverless-http";
 
 const server = jsonServer.create();
-const router = jsonServer.router(path.join(__dirname, "../../db.json"));
+const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
 server.use(router);
 
-// Netlify'ga mos ravishda functionni export qilish
-exports.handler = async (event, context) => {
-  return new Promise((resolve, reject) => {
-    server.handle(event, context, (response) => {
-      resolve({
-        statusCode: response.statusCode,
-        body: JSON.stringify(response.body),
-      });
-    });
-  });
-};
-
-
-
-
-
-// const { createServer } = require("json-server");
-// const server = createServer();
-// const router = createServer();
-// const middlewares = jsonServer.defaults();
-
-// server.use(middlewares);
-// server.use(router);
-// server.listen(5000, () => {
-//   console.log("JSON Server is running");
-// });
+export const handler = serverless(server);
