@@ -1,6 +1,6 @@
 const baseURL = process.env.NODE_ENV === "production" 
   ? "https://jsonservertest-1.netlify.app" // Netlify domeni
-  : "http://localhost:8888"; // Lokal server uchun
+  : "http://localhost:8881"; // Lokal server uchun
 
 export default {
   getPosts() {
