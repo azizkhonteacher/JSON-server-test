@@ -26,7 +26,7 @@
     methods: {
       async fetchImages() {
         try {
-          const response = await fetch("http://localhost:3001/upload");
+          const response = await fetch("http://localhost:8888/upload");
           const data = await response.json();
   
           // Rasmlarni massivga olish

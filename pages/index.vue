@@ -41,7 +41,7 @@ import viewPhotos from './viewPhotos.vue';
           const base64Image = reader.result;
   
           // Base64 ni JSON serverga yuborish
-          fetch("http://localhost:3001/upload", {
+          fetch("http://localhost:8888/upload", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ image: base64Image }),
